@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'smsdjango.wsgi.application'
 
+# Change user model
+AUTH_USER_MODEL = 'sms.User'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
