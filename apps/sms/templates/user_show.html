@@ -1,0 +1,13 @@
+{% extends 'index.html'%}
+    {% block title %}User list{% endblock %}
+
+
+    {% block content %}
+        <ul>
+            {% for user in object_list %}
+                <li>{{ user.username }} - {{ user.phone }}</li>
+            {% empty %}
+                <li>No users yet.</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}        

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.views.generic.edit import CreateView
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 from .forms import CreateUserForm
 from .models import User
 #twilio package
@@ -18,3 +18,8 @@ class CreateUserView(CreateView):
     form_class = CreateUserForm
     template_name = 'create.html'
     success_url = '/'
+
+
+class UserView(ListView):
+    model = User
+    template_name = 'user_show.html'
