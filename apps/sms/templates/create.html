@@ -2,9 +2,10 @@
     {% block title %}Create User{% endblock %}
     
     {% block content %}
+        
         <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Save" />
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     {% endblock %}        
