@@ -63,4 +63,13 @@ class SendFormForm(forms.ModelForm):
         model = Sendedsms
         fields = '__all__'
 
+        widgets = {            
+            'messaje': forms.TextInput(attrs={
+                'type': 'text',
+                'required':'true',
+                'class':'form-control'
+            }),   
+
+        }
+
 

@@ -1,0 +1,13 @@
+{% extends 'index.html'%}
+{% block title %}SMS list{% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for sms in object_list %}
+            <li>{{ sms.to }} - {{ sms.messaje }}</li>
+        {% empty %}
+            <li>No sms yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}        

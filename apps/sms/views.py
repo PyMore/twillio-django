@@ -34,11 +34,9 @@ class SendsmsCreate(CreateView):
     template_name = 'send.html'
     success_url = '/'
 
-
     def form_valid(self, form):
+        
         user = User.objects.filter(username=form.instance.to).values('phone')
-#        form.instance.created_by = self.request.user
-
         clientSend  = Client(settings.ACCOUNT_SID,
                             settings.AUTH_TOKEN)
         message = clientSend.messages.create(
@@ -47,3 +45,8 @@ class SendsmsCreate(CreateView):
                 from_='twilio number')
                
         return super(SendsmsCreate, self).form_valid(form)
+
+
+class SendsmsList(ListView):
+    model = Sendedsms
+    template_name = 'show.html'

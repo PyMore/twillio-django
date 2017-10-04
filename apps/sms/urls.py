@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import CreateUserView,UserView,SendsmsCreate
+from .views import CreateUserView,UserView,SendsmsCreate,SendsmsList
 
 urlpatterns = [
     # users
@@ -9,6 +9,8 @@ urlpatterns = [
         name='use-list'),
     # sms
     url(r'^send/', SendsmsCreate.as_view(),
-        name='sendsms-create')
+        name='sendsms-create'),
+    url(r'^list/', SendsmsList.as_view(),
+        name='sendsms-list'),        
         
 ]
