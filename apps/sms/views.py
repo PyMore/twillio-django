@@ -44,6 +44,6 @@ class SendsmsCreate(CreateView):
         message = clientSend.messages.create(
                 "+52"+str(user),
                 body="Hi, you send a sms :)" ,
-                from_='number')
+                from_='twilio number')
                
         return super(SendsmsCreate, self).form_valid(form)
